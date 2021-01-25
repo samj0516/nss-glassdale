@@ -10,9 +10,12 @@
 .criminalCard {
     border: .5px dotted black;
     padding: 10px;
-    width: 250px;
+    width: 225px;
     margin: 5px;
     /* display: flex; */
     /* justify-content: space-between; */
 
+}
+.criminalCard p {
+    margin: 0;
 }
