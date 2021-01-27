@@ -5,18 +5,18 @@ const criminalsContainer = document.querySelector(".criminalsContainer")
 const eventHub = document.querySelector(".container")
 
 const renderToDom = (criminalCollection) => {
-    let criminalsHTMLRepresentations = ""
+    let criminalHTML = ""
   
     for (const criminal of criminalCollection) {
-      criminalsHTMLRepresentations += Criminal(criminal)
+      criminalHTML += Criminal(criminal)
     }
-    
     criminalsContainer.innerHTML = `
-    <h3>Criminals</h3>
+    <h2>Glassdale Criminals</h2>
     <section class="criminalsList">
-    ${criminalsHTMLRepresentations}
-    </section>`
+    ${criminalHTML}
+    </section`
   }
+
 
   export const CriminalList = () => {
     getCriminals().then(() => {
@@ -29,18 +29,27 @@ const renderToDom = (criminalCollection) => {
 
 
 // Listen for the custom event you dispatched in ConvictionSelect
-eventHub.addEventListener('what custom event did you dispatch in ConvictionSelect?', event => {
+eventHub.addEventListener('crimeChosen', event => {
     // Use the property you added to the event detail.
     if (event.detail.crimeThatWasChosen !== "0"){
+        const convictionsArray = useConvictions()
+        const chosenConvictionObject = convictionsArray.find(convictionObj => {
+            
+            return convictionObj.id === parseInt(event.detail.crimeThatWasChosen)
+          })
         /*
             Filter the criminals application state down to the people that committed the crime
         */
-        const matchingCriminals = appStateCriminals.filter()
-
+        const criminalsArray = useCriminals()
+        const filteredCriminals = criminalsArray.filter(criminalObj => criminalObj.conviction === chosenConvictionObject.name)
+        renderToDom(filteredCriminals)
         /*
             Then invoke render() and pass the filtered collection as
             an argument
         */
+    }else {
+        const criminalsArray = useCriminals()
+        renderToDom(criminalsArray)
     }
 })
 
