@@ -66,3 +66,10 @@ header{
     /* width: 90%; */
     margin: 5px;
 }
+.associateCard{
+    border: 1px dotted black;
+    padding: 5px;
+    /* width: 90%; */
+    margin: 5px;
+
+}

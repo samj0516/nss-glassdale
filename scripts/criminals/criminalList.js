@@ -73,3 +73,7 @@ eventHub.addEventListener("officerSelected", event => {
         renderToDom(criminalsArray)
     }
 })
+
+
+
+

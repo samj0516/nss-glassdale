@@ -53,6 +53,18 @@
       "suspect": "Cinderella",
       "note": "Left a shoe...very sus",
       "id": 10
+    },
+    {
+      "date": "2020-12-02",
+      "suspect": "Charlie",
+      "note": "Charlie was barking this morning... so sus",
+      "id": 11
+    },
+    {
+      "date": "2020-10-01",
+      "suspect": "Paul",
+      "note": "Paul was buying alot of expensive stuff the other day... very sus",
+      "id": 12
     }
   ]
 }
