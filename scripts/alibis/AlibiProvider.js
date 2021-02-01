@@ -9,7 +9,7 @@ const eventHub = document.querySelector(".container")
 
 export const AssociatesList = (criminalObj) => {
     const HTMLRep = `<div class="associateCard">
-    <h2>Known Associates for ${criminalObj.name}</h2>
+    <h3>Known Associates for: ${criminalObj.name}</h3>
     ${criminalObj.known_associates.map(associate => {
         return  `<section class="associateInfo">
         <div class="associate__name">${associate.name}</div>

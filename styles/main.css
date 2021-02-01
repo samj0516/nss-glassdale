@@ -5,12 +5,15 @@ body {
     /* display: flex; */
 }
 header{
-    /* width: 100%; */
-    border: 1px dotted black;
+    width: 100%;
+    /* border: 1px dotted black; */
     display: block;
-    width: 200px;
-    margin-left: 450px;
+    /* width: 200px; */
+    /* margin-left: 450px; */
+    padding: 10px;
+    text-align: center;
 }
+
 .noteFormContainer{
     width: 200px;
     margin: 5px;
@@ -72,4 +75,10 @@ header{
     /* width: 90%; */
     margin: 5px;
 
+}
+/* .associateCard h3 {
+    text-align: center;
+} */
+.noteListButton{
+    align-items: center;
 }
