@@ -73,3 +73,34 @@ eventHub.addEventListener("officerSelected", event => {
         renderToDom(criminalsArray)
     }
 })
+
+// Create listener for custom alibi event on criminalList
+// eventHub.addEventListener("associateSelected", event => {
+//     // How can you access the officer name that was selected by the user?
+//     if (event.detail.selectedAssociateName !== "0"){
+//         const criminalId = parseInt(event.detail.selectedAssociateName)
+
+//     // How can you get the criminals that were arrested by that officer?
+//         const criminals = useCriminals()
+//         const chosenCriminal = criminals.find(criminalObj => {
+//            if (criminalObj.id === criminalId){
+//                 return criminalObj.known_associates
+//             })
+            
+//         })}       
+// }
+
+eventHub.addEventListener('associateSelected', event => {
+    if (event.detail.selectedAssociateName !== "0"){
+        const criminalId = parseInt(event.detail.selectedAssociateName)
+        console.log(criminalId)
+        const criminals = useCriminals()
+        const chosenCriminalAssociate = criminals.find(criminalObj => {
+            if (criminalObj.id === criminalId){
+                return criminalObj.known_associates
+            }
+        })
+        window.alert(chosenCriminalAssociate)
+    }
+    
+})
