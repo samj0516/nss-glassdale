@@ -15,10 +15,9 @@ const renderToDom = (criminalCollection) => {
     <section class="criminalsList">
     ${criminalHTML}
     </section`
-  }
+}
 
-
-  export const CriminalList = () => {
+export const CriminalList = () => {
     getCriminals().then(() => {
         const criminalArray = useCriminals()
         renderToDom(criminalArray)

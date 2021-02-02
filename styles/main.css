@@ -5,22 +5,26 @@ body {
     /* display: flex; */
 }
 header{
-    width: 100%;
+    width: 98%;
     /* border: 1px dotted black; */
     display: block;
     /* width: 200px; */
     /* margin-left: 450px; */
-    padding: 10px;
+    padding: 5px;
+    margin: 5px;
     text-align: center;
+    background-color: papayawhip;
 }
 
 .noteFormContainer{
-    width: 200px;
+    /* width: 200px; */
     margin: 5px;
+    padding: 5px;
+    background-color: papayawhip;
 }
 .criminalsContainer {
     /* display: flex; */
-    border: 1px dotted black;
+    border: .5px dotted black;
     width: 80%;
 }
 .criminalsContainer h2 {
@@ -30,7 +34,7 @@ header{
 .criminalsList {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     /* width: 40%; */
             
 }
@@ -39,6 +43,7 @@ header{
     padding: 10px;
     width: 225px;
     margin: 5px;
+    background-color: papayawhip;
     /* display: flex; */
     /* justify-content: space-between; */
 
@@ -54,7 +59,8 @@ header{
     /* width: 20%; */
 }
 .noteListContainer h3 {
-    text-align: center;
+    /* text-align: center; */
+    padding: 5px;
 }
 .box{
     display:flex
@@ -64,16 +70,18 @@ header{
 }
 
 .note{
-    border: 1px dotted black;
+    border: .5px dotted black;
     padding: 5px;
     /* width: 90%; */
     margin: 5px;
+    background-color: papayawhip;
 }
 .associateCard{
-    border: 1px dotted black;
+    border: .5px dotted black;
     padding: 5px;
     /* width: 90%; */
     margin: 5px;
+    background-color: papayawhip;
 
 }
 /* .associateCard h3 {
@@ -82,3 +90,37 @@ header{
 .noteListButton{
     align-items: center;
 }
+ #witnessBox { 
+    border: .5px dotted black;
+    width: 80%;
+ }  
+.witnessContainer h2 {
+    text-align: center;
+    
+}
+.witnessList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* width: 40%; */
+            
+}
+.witnessCard {
+    border: .5px dotted black;
+    padding: 10px;
+    width: 225px;
+    margin: 5px;
+    background-color: papayawhip;
+    /* display: flex; */
+    /* justify-content: space-between; */
+
+}
+.witnessCard p {
+    margin: 0;
+}
+#criminalBox{
+    display: block;
+}
+/* #witnessBox{
+    display: none;
+} */
