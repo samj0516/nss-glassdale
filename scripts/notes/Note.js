@@ -1,9 +1,9 @@
-export const NoteHTMLConverter = (noteObject) => {
+export const NoteHTMLConverter = (noteObj, criminalObj) => {
     return `
         <section class="note">
-            <div class="note__date">Date: ${ new Date(noteObject.date).toLocaleDateString('en-US')  }</div>
-            <div class="note__suspect">Suspect: ${ noteObject.suspect }</div>
-            <div class="note__text">Note: ${ noteObject.note }</div>
+            <div class="note__date">Date: ${ noteObj.date }</div>
+            <div class="note__criminal">Suspect: ${ criminalObj.name }</div>
+            <div class="note__text">Note: ${ noteObj.note }</div>
         </section>
     `
 }
