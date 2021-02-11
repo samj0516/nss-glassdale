@@ -9,8 +9,11 @@ export const ShowWitnessesButton = () => {
 
 eventHub.addEventListener("click", event => {
     if (event.target.id === "showWitnesses"){
+      const buttonText = event.target
       const customEvent = new CustomEvent("witnessClick", {
-        
+          detail: {
+              buttonText: buttonText
+          }
     })
     eventHub.dispatchEvent(customEvent)
 }
