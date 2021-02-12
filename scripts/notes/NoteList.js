@@ -1,4 +1,4 @@
-import { getNotes, useNotes } from "./NoteDataProvider.js";
+import { getNotes, useNotes, deleteNote } from "./NoteDataProvider.js";
 import { NoteHTMLConverter } from "./Note.js";
 import { getCriminals, useCriminals } from '../criminals/CriminalDataProvider.js'
 
@@ -30,27 +30,6 @@ const render = (noteArray, criminalArray) => {
 
 
 
-
-
-
-
-// const render = (noteArray, criminalArray) => {
-//     contentTarget.innerHTML = noteArray.map(noteObject => {
-//         const relatedCriminal = criminalArray.find(criminal => criminal.id === parseInt(noteObject.criminalId))
-//         console.log(relatedCriminal)
-//         return `
-//         <h3>Case Notes</h3>
-//         <section class="notesList">
-//             <div class="note__date">Date: ${ new Date(noteObject.date).toLocaleDateString('en-US')  }</div>
-//             <div class="note__criminal">Suspect: ${ relatedCriminal.name }</div>
-//             <div class="note__text">Note: ${ noteObject.note }</div>
-//         </section>`
-
-//     }).join("")
-
-     
-// }
-
 // Standard list function you're used to writing by now. BUT, don't call this in main.js! Why not?
 export const NoteList = () => {
     getCriminals()
@@ -65,5 +44,27 @@ eventHub.addEventListener("noteStateChanged", event => {
     if (contentTarget.innerHTML !== "") {
       NoteList()
     }
-  })
+})
   
+
+
+
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id.startsWith("deleteNote--")) {
+        const [prefix, id] = clickEvent.target.id.split("--")
+
+        /*
+            Invoke the function that performs the delete operation.
+
+            Once the operation is complete you should THEN invoke
+            useNotes() and render the note list again.
+        */
+       deleteNote(id).then(
+           () => {
+               const updatedNotes = useNotes()
+               const criminals = useCriminals()
+               render(updatedNotes, criminals)
+           }
+       )
+    }
+})
