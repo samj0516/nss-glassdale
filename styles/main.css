@@ -38,16 +38,7 @@ header{
     /* width: 40%; */
             
 }
-.criminalCard {
-    border: .5px dotted black;
-    padding: 10px;
-    width: 225px;
-    margin: 5px;
-    background-color: papayawhip;
-    /* display: flex; */
-    /* justify-content: space-between; */
 
-}
 .criminalCard p {
     margin: 0;
 }
@@ -124,3 +115,14 @@ header{
 /* #witnessBox{
     display: none;
 } */
+
+.criminalCard {
+    border: .5px dotted black;
+    padding: 10px;
+    width: 225px;
+    margin: 5px;
+    background-color: papayawhip;
+    /* display: flex; */
+    /* justify-content: space-between; */
+
+}
