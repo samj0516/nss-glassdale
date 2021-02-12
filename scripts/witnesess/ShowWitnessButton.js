@@ -9,12 +9,18 @@ export const ShowWitnessesButton = () => {
 
 eventHub.addEventListener("click", event => {
     if (event.target.id === "showWitnesses"){
-      const buttonText = event.target
+      const witnessButtonText = event.target
       const customEvent = new CustomEvent("witnessClick", {
           detail: {
-              buttonText: buttonText
-          }
-    })
-    eventHub.dispatchEvent(customEvent)
-}
+              buttonText: witnessButtonText
+                }
+            })
+        eventHub.dispatchEvent(customEvent)
+    }
+    // const buttonText = event.target
+    // if(buttonText.innerHTML === "Show Witness Statements"){
+    //     buttonText.innerHTML = "Show Criminals"
+    // }else{
+    //     buttonText.innerHTML = "Show Witness Statements"
+    // }
 })
