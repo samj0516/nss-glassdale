@@ -79,6 +79,8 @@ eventHub.addEventListener('crimeChosen', event => {
         */
     }else {
         const criminalsArray = useCriminals()
+        const facilities = useFacilities()
+        const crimFac = useCriminalFacilities()
         renderToDom(criminalsArray, facilities, crimFac)
     }
 })

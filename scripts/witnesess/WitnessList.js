@@ -39,11 +39,13 @@ eventHub.addEventListener("witnessClick", customEvent => {
         criminalBox.style.display = 'block'
         witnessBox.style.display = 'none'
     }
-    if(customEvent.detail.buttonText.innerHTML === "Show Witness Statements"){
-        customEvent.detail.buttonText.innerHTML = "Show Criminals"
-    }else {
-        customEvent.detail.buttonText.innerHTML = "Show Witness Statements"
+    const buttonText = customEvent.detail.buttonText
+    if(buttonText.innerHTML === "Show Witness Statements"){
+        buttonText.innerHTML = "Show Criminals"
+    }else{
+        buttonText.innerHTML = "Show Witness Statements"
     }
+    
 })
 
 // .style.display = "none"
