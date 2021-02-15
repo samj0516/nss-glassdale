@@ -54,6 +54,27 @@ export const CriminalList = () => {
     })
 }
 
+// Listening for List Facilities button to be clicked. Toggles criminal visibility
+eventHub.addEventListener("facilityClick", customEvent => {
+    const criminalBox = document.getElementById('criminalBox')
+    const facilityBox = document.querySelector('.facilityContainer')
+ 
+     if(criminalBox.style.display == "block"){
+         criminalBox.style.display = "none"
+         facilityBox.style.display = 'block'
+         
+     }else{
+         criminalBox.style.display = 'block'
+         facilityBox.style.display = 'none'
+     }
+     const buttonText = customEvent.detail.buttonText
+     if(buttonText.innerHTML === "List Facilities"){
+         buttonText.innerHTML = "Show Criminals"
+     }else{
+         buttonText.innerHTML = "List Facilities"
+     }
+     
+ })
 
 
 

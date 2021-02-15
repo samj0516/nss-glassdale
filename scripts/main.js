@@ -8,7 +8,7 @@ import './alibis/AlibiProvider.js'
 import { ShowWitnessesButton } from './witnesess/ShowWitnessButton.js'
 import { WitnessList } from './witnesess/WitnessList.js'
 import { getCriminals } from './criminals/CriminalDataProvider.js'
-
+import { ShowFacilitiesButton } from './facilities/ShowFacilitiesButton.js'
 getCriminals()
     .then(NoteForm)
 
@@ -20,5 +20,6 @@ OfficerSelect()
 // NoteForm()
 ShowNoteButton()
 ShowWitnessesButton()
+ShowFacilitiesButton()
 // WitnessList()
 // ShowAlibiButton()
