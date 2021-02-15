@@ -20,6 +20,7 @@ const eventHub = document.querySelector(".container")
 
 const renderToDom = (criminalCollection, allFacilities, allRelationships) => {
     // Step 1 - Iterate all criminals
+    
     const facilityMatchedCriminal = criminalCollection.map(
         (criminalObject) => {
             // Step 2 - Filter all relationships to get only ones for this criminal
