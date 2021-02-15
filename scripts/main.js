@@ -9,11 +9,13 @@ import { ShowWitnessesButton } from './witnesess/ShowWitnessButton.js'
 import { WitnessList } from './witnesess/WitnessList.js'
 import { getCriminals } from './criminals/CriminalDataProvider.js'
 import { ShowFacilitiesButton } from './facilities/ShowFacilitiesButton.js'
+import { FacilityList } from './facilities/FacilityList.js'
 getCriminals()
     .then(NoteForm)
 
 
 CriminalList()
+// FacilityList()
 ConvictionSelect()
 OfficerSelect()
 
