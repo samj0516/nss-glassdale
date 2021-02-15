@@ -127,3 +127,10 @@ header{
     display: none;
 } */
 
+.facilityCard{
+    border: .5px dotted black;
+    padding: 10px;
+    width: 225px;
+    margin: 5px;
+    background-color: papayawhip;
+}
