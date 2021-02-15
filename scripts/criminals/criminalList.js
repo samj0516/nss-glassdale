@@ -20,6 +20,7 @@ const eventHub = document.querySelector(".container")
 
 const renderToDom = (criminalCollection, allFacilities, allRelationships) => {
     // Step 1 - Iterate all criminals
+    
     const facilityMatchedCriminal = criminalCollection.map(
         (criminalObject) => {
             // Step 2 - Filter all relationships to get only ones for this criminal
@@ -53,6 +54,27 @@ export const CriminalList = () => {
     })
 }
 
+// Listening for List Facilities button to be clicked. Toggles criminal visibility
+eventHub.addEventListener("facilityClick", customEvent => {
+    const criminalBox = document.getElementById('criminalBox')
+    const facilityBox = document.querySelector('.facilityContainer')
+ 
+     if(criminalBox.style.display == "block"){
+         criminalBox.style.display = "none"
+         facilityBox.style.display = 'block'
+         
+     }else{
+         criminalBox.style.display = 'block'
+         facilityBox.style.display = 'none'
+     }
+     const buttonText = customEvent.detail.buttonText
+     if(buttonText.innerHTML === "List Facilities"){
+         buttonText.innerHTML = "Show Criminals"
+     }else{
+         buttonText.innerHTML = "List Facilities"
+     }
+     
+ })
 
 
 

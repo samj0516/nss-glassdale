@@ -8,7 +8,20 @@ const contentTarget = document.querySelector(".noteListContainer")
 const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("showNotesClicked", customEvent => {
-    NoteList()
+    const buttonText = customEvent.detail.buttonText
+    if(contentTarget.innerHTML == ""){
+        buttonText.innerHTML = "Hide Notes"
+        // contentTarget.style.display = "inline"
+        NoteList()
+    }else if(buttonText.innerHTML == "Hide Notes"){
+        contentTarget.style.display = "none"
+        buttonText.innerHTML = "Show Notes"
+    }else if(buttonText.innerHTML == "Show Notes"){
+        contentTarget.style.display = "block"
+        buttonText.innerHTML = "Hide Notes"
+    }
+    
+    
 })
 
 
@@ -17,12 +30,12 @@ const render = (noteArray, criminalArray) => {
         const relatedCriminal = criminalArray.find(criminal => criminal.id === noteObject.criminalId)
         
         return NoteHTMLConverter(noteObject, relatedCriminal)
-        debugger
+    
     }).join("")
     contentTarget.innerHTML = `<h3>Case Notes</h3>
-        <section class="notesList">
+        <article class="notesList">
             ${allNotesToStrings}
-        </section>`
+        </article>`
 
 
      
@@ -40,6 +53,8 @@ export const NoteList = () => {
             render(allNotes, criminals)
         })
 }
+
+
 eventHub.addEventListener("noteStateChanged", event => {
     if (contentTarget.innerHTML !== "") {
       NoteList()

@@ -17,10 +17,5 @@ eventHub.addEventListener("click", event => {
             })
         eventHub.dispatchEvent(customEvent)
     }
-    // const buttonText = event.target
-    // if(buttonText.innerHTML === "Show Witness Statements"){
-    //     buttonText.innerHTML = "Show Criminals"
-    // }else{
-    //     buttonText.innerHTML = "Show Witness Statements"
-    // }
+   
 })
