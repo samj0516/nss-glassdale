@@ -30,22 +30,18 @@ export const WitnessList = () => {
 eventHub.addEventListener("witnessClick", customEvent => {
    const criminalBox = document.getElementById('criminalBox')
    const witnessBox = document.getElementById('witnessBox')
+   const buttonText = customEvent.detail.buttonText
 //    criminalBox.style.display = "block"
-    if(criminalBox.style.display == "block"){
+    if(criminalBox.style.display == "block" && buttonText.innerHTML === "Show Witness Statements"){
         criminalBox.style.display = "none"
         witnessBox.style.display = 'block'
         WitnessList()
-    }else{
+        buttonText.innerHTML = "Show Criminals"
+    }else if(criminalBox.style.display == "none" && buttonText.innerHTML === "Show Criminals"){
         criminalBox.style.display = 'block'
         witnessBox.style.display = 'none'
-    }
-    const buttonText = customEvent.detail.buttonText
-    if(buttonText.innerHTML === "Show Witness Statements"){
-        buttonText.innerHTML = "Show Criminals"
-    }else{
         buttonText.innerHTML = "Show Witness Statements"
     }
-    
+     
 })
 
-// .style.display = "none"
